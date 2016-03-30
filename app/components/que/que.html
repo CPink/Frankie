@@ -1,0 +1,26 @@
+<ion-pane>
+    <ion-header-bar class="bar-transparent">
+        <h1 class="title">Question Queue</h1>
+    </ion-header-bar>
+
+    <swipe-cards on-card-swipe="onSwipe($event)">
+
+        <swipe-cards>
+            <swipe-card id="start-card" on-card-swipe="qc.cardSwiped(card)">
+                You Win
+          
+                <img src="images/gameover.jpg">
+            </swipe-card>
+            <swipe-card ng-repeat="card in classes[0].questions" on-destroy="qc.cardSwiped(cards)">
+                        {{card.author}} {{card.body}}
+                <div>
+                    <div class="title" ng-repeat="quest in questions">
+                    </div>
+                    <!--<div gravatar-src="user.email" gravatar-size="100">
+              <img ng-src="{{card.image}}">
+            </div>-->
+                </div>
+            </swipe-card>
+        </swipe-cards>
+    </swipe-cards>
+</ion-pane>
